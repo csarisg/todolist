@@ -4,6 +4,7 @@ import TodoList from "./components/TodoList";
 import "./index.css";
 
 function App() {
+  // Cargar desde localStorage correctamente
   const [todos, setTodos] = useState(() => {
     try {
       const data = localStorage.getItem("tareas");
@@ -14,6 +15,7 @@ function App() {
   });
 
   const [filtro, setFiltro] = useState("todas");
+  const [modoOscuro, setModoOscuro] = useState(false);
 
   // Guardar en localStorage
   useEffect(() => {
@@ -27,8 +29,12 @@ function App() {
   });
 
   return (
-    <div>
+    <div className={modoOscuro ? "dark" : ""}>
       <h1>Todo List</h1>
+
+      <button onClick={() => setModoOscuro(!modoOscuro)}>
+        🌙
+      </button>
 
       <Form setTodos={setTodos} />
 
