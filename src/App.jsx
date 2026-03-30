@@ -10,7 +10,7 @@ function App() {
     <div>
       <h1>Todo List</h1>
       <Form setTodos={setTodos} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 }
