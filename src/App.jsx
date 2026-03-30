@@ -1,11 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Form from "./components/Form";
 import TodoList from "./components/TodoList";
 import "./index.css";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    try {
+      const data = localStorage.getItem("tareas");
+      return data ? JSON.parse(data) : [];
+    } catch {
+      return [];
+    }
+  });
+
   const [filtro, setFiltro] = useState("todas");
+
+  // Guardar en localStorage
+  useEffect(() => {
+    localStorage.setItem("tareas", JSON.stringify(todos));
+  }, [todos]);
 
   const tareasFiltradas = todos.filter((todo) => {
     if (filtro === "completadas") return todo.completado;
