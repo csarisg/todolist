@@ -1,11 +1,5 @@
-function Todo() {
-  return (
-    <div>
-      <span>Tarea ejemplo</span>
-      <button>✔</button>
-      <button>🗑</button>
-    </div>
-  );
+function Todo({ todo }) {
+  return <div>{todo.texto}</div>;
 }
 
 export default Todo;
