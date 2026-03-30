@@ -1,7 +1,26 @@
-function Form() {
+import { useState } from "react";
+
+function Form({ setTodos }) {
+  const [input, setInput] = useState("");
+
+  const agregarTarea = (e) => {
+    e.preventDefault();
+    if (input.trim() === "") return;
+
+    setTodos((prev) => [
+      ...prev,
+      { id: Date.now(), texto: input, completado: false }
+    ]);
+
+    setInput("");
+  };
+
   return (
-    <form>
-      <input type="text" placeholder="Agregar tarea..." />
+    <form onSubmit={agregarTarea}>
+      <input
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      />
       <button>➕</button>
     </form>
   );
