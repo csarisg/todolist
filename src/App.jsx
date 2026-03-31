@@ -31,7 +31,7 @@ function App() {
       <h1>Todo List</h1>
 
       <button onClick={() => setModoOscuro(!modoOscuro)}>
-        modo
+        🌙
       </button>
 
       <Form setTodos={setTodos} />
