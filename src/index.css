@@ -1,4 +1,119 @@
 body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #1d2671, #c33764);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.app {
+  background: #f5f5f5;
+  padding: 30px;
+  border-radius: 20px;
+  width: 350px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   text-align: center;
-  font-family: Arial;
+}
+
+/* TITULO */
+h1 {
+  margin-bottom: 20px;
+  color: #1d2671;
+}
+
+/* FORM */
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background: #e0e0e0;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  background: #ff5e57;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* SELECT */
+select {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  width: 100%;
+}
+
+/* LISTA */
+.app > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ITEM */
+span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eaeaea;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+/* BOTONES INTERNOS */
+span div {
+  display: flex;
+  gap: 5px;
+}
+
+/* MODO OSCURO */
+.dark {
+  background: #121212;
+  color: white;
+}
+
+.dark input {
+  background: #333;
+  color: white;
+}
+
+.dark span {
+  background: #2a2a2a;
+}
+
+.dark button {
+  background: #bb86fc;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 480px) {
+  .app {
+    width: 90%;
+    padding: 20px;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
 }

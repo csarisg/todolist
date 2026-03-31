@@ -14,8 +14,8 @@ function App() {
   });
 
   const [filtro, setFiltro] = useState("todas");
+  const [modoOscuro, setModoOscuro] = useState(false);
 
-  // Guardar en localStorage
   useEffect(() => {
     localStorage.setItem("tareas", JSON.stringify(todos));
   }, [todos]);
@@ -27,8 +27,12 @@ function App() {
   });
 
   return (
-    <div>
+    <div className={modoOscuro ? "app dark" : "app"}>
       <h1>Todo List</h1>
+
+      <button onClick={() => setModoOscuro(!modoOscuro)}>
+        modo
+      </button>
 
       <Form setTodos={setTodos} />
 
