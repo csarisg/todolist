@@ -12,16 +12,20 @@ function Todo({ todo, setTodos }) {
   };
 
   return (
-    <div>
-      <span style={{
-        textDecoration: todo.completado ? "line-through" : "none"
-      }}>
+    <span>
+      <span
+        style={{
+          textDecoration: todo.completado ? "line-through" : "none",
+        }}
+      >
         {todo.texto}
       </span>
 
-      <button onClick={completar}>✔</button>
-      <button onClick={eliminar}>🗑</button>
-    </div>
+      <div>
+        <button onClick={completar}>✔</button>
+        <button onClick={eliminar}>✖</button>
+      </div>
+    </span>
   );
 }
 
